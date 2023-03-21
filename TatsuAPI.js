@@ -16,24 +16,21 @@ class TatsuAPI {
         this.token = token;
         this.handler = new RatelimitHandler({"Authorization": token});
     }
+    
+    /** Parameter explanation 
+     * userID referred to the individual user Discord ID 
+     * guildID referred to the Discord Server ID
+     * period accept only "all", "month" or "week" only
+    */
 
-    /**
-     * @param {string} guildID
-     * @param {number?} page
-     * @returns {Promise<Rankings>}
-     */
-    getGuildLeaderboard(guildID, page = 0) {
-        return this.handler.get(BASEPATH + `guilds/${guildID}/rankings/all?offset=${page * 100}`);
+    // Get Guild Leaderboard with offset showing 100 users ranking
+    getGuildLeaderboard(guildID, page = 0, period = "all") {
+        return this.handler.get(BASEPATH + `guilds/${guildID}/rankings/${period}?offset=${page * 100}`);
     }
 
-    /**
-     *
-     * @param {string} userID
-     * @param {string} guildID
-     * @returns {Promise<Member>}
-     */
-    getUserRankInGuild(userID, guildID) {
-        return this.handler.get(BASEPATH + `guilds/${guildID}/rankings/members/${userID}/all`)
+    // Get Member Ranking in the Guild
+    getUserRankInGuild(userID, guildID, period = "all") {
+        return this.handler.get(BASEPATH + `guilds/${guildID}/rankings/members/${userID}/${period}`)
     }
 
     /**
