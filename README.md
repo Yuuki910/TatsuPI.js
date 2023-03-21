@@ -16,3 +16,8 @@ api.getUserProfile("<userId>"); // To get a users profile
 api.getGuildLeaderboard("<guildId>",[page number]); // To get the guild leaderboard
 api.getUserRankInGuild("<userId>", "<guildId>"); // To get the User Rank in a guild
 ```
+
+Improvement: 
+-Include the period parameter that can specify all time, monthly or weekly to the guild leaderboard or member ranking
+Added Store
+-Added Store function (pending later)
