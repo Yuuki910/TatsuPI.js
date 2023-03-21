@@ -18,6 +18,6 @@ api.getUserRankInGuild("<userId>", "<guildId>"); // To get the User Rank in a gu
 ```
 
 Improvement: 
--Include the period parameter that can specify all time, monthly or weekly to the guild leaderboard or member ranking
+> - Include the period parameter that can specify all time, monthly or weekly to the guild leaderboard or member ranking
 Added Store
--Added Store function (pending later)
+> - Added Store function (pending later)
